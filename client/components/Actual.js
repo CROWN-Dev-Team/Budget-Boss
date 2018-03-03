@@ -1,10 +1,10 @@
-import React from 'react';
-import {Button} from 'react-bootstrap';
-import Modal from 'react-modal';
-import axios from 'axios';
-import {Link} from 'react-router-dom';
-var querystring = require('querystring');
+// import React from 'react';
+// import {Button} from 'react-bootstrap';
+// import Modal from 'react-modal';
+// import axios from 'axios';
+// import {Link} from 'react-router-dom';
+// var querystring = require('querystring');
 
-render()
+// render()
 
-export default Actual;
+// export default Actual;
