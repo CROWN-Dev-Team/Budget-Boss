@@ -5,7 +5,7 @@
 // import {Link} from 'react-router-dom';
 // var querystring = require('querystring');
 
-// class Actual extends React.Component {
+// class Income extends React.Component {
 //     constructor() {
 //           super();
 //     this.state = {
@@ -19,4 +19,4 @@
 
 // render()
 
-// export default Actual;
+// export default Balance;
