@@ -16,18 +16,10 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: false}));
 
 app.use('/', router);
 
-var db = process.env.MONGODB_URI || 'mongodb://admin:admin123@ds255308.mlab.com:55308/heroku_1tgc4d2n';
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/morning-caverns-94025";
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI, {
     useMongoClient: true
-});
-
-mongoose.connect(db, function(eror) {
-    if (error) {
-        console.log(error);
-    } else {
-        console.log("mongoose connection successful");
-    }
 });
 
 app.listen(PORT, function() {
