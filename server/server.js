@@ -19,7 +19,7 @@ app.use('/', router);
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/morning-caverns-94025";
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI, {
-    useMongoClient: true
+    // useMongoClient: true
 });
 
 app.listen(PORT, function() {
