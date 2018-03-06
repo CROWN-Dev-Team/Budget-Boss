@@ -4,6 +4,7 @@ var Schema = mongoose.Schema;
 var expenseSchema = new Schema({
   description: String,
   amount: Number,
+  actual: Number,
   month: String,
   year: Number
 });
