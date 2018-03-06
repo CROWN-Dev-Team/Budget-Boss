@@ -32141,6 +32141,16 @@ var App = function (_React$Component) {
                 _react2.default.createElement(
                   'td',
                   { className: 'button-col' },
+                  exp.actual
+                ),
+                _react2.default.createElement(
+                  'td',
+                  { className: 'button-col' },
+                  exp.difference
+                ),
+                _react2.default.createElement(
+                  'td',
+                  { className: 'button-col' },
                   exp.month
                 ),
                 _react2.default.createElement(
@@ -33307,7 +33317,7 @@ var Add = function (_React$Component) {
                 _react2.default.createElement(
                   'option',
                   { value: 'Feb', id: 'Feb' },
-                  'Febrary'
+                  'February'
                 ),
                 _react2.default.createElement(
                   'option',
