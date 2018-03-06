@@ -34,7 +34,8 @@ closeModal() {
         modalIsOpen: false,
         description: '',
         amount: '',
-        actual:'',
+        actual: '',
+        difference: '',
         month: 'Jan',
         year: 2016,
         messageFromServer: ''
@@ -89,6 +90,7 @@ insertNewExpense(e) {
           desc: e.state.description,
           amount: e.state.amount,
           actual: e.state.actual,
+          difference: e.state.difference,
           month: e.state.month,
           year: e.state.year
         }), {
@@ -116,6 +118,11 @@ if (e.target.name == "actual") {
         this.setState({
           actual: e.target.value
         });
+      }
+if (e.target.name == "difference") {
+        this.setState({
+          difference: e.target.value
+        });
       }      
     }
 render() {
@@ -135,6 +142,7 @@ render() {
        <label for="description">Description:</label><input type="text" id="description" name="description" value={this.state.description} onChange={this.handleTextChange}></input>
        <label for="amount">Amount:</label><input type="number" id="amount" name="amount" value={this.state.amount} onChange={this.handleTextChange}></input>
        <label for="actual">Actual:</label><input type="number" id="actual" name="actual" value={this.state.actual} onChange={this.handleTextChange}></input>
+       <label for="difference">Difference:</label><input type="number" id="difference" name="difference" value={this.state.difference} onChange={this.handleTextChange}></input>
        <label for="month">Month:</label><select id="month" name="month" value={this.state.month} onChange={this.handleSelectChange}>
             <option value="Jan" id="Jan">January</option>
             <option value="Feb" id="Feb">Febrary</option>

@@ -5,6 +5,7 @@ var expenseSchema = new Schema({
   description: String,
   amount: Number,
   actual: Number,
+  difference: Number,
   month: String,
   year: Number
 });
