@@ -11,6 +11,8 @@ router.route('/insert')
  var expense = new Expense();
   expense.description = req.body.desc;
   expense.amount = req.body.amount;
+  expense.amount = req.body.actual;
+  expense.amount = req.body.difference;
   expense.month = req.body.month;
   expense.year = req.body.year;
 expense.save(function(err) {
@@ -24,6 +26,8 @@ router.route('/update')
  const doc = {
      description: req.body.description,
      amount: req.body.amount,
+     actual: req.body.actual,
+     difference: req.body.difference,
      month: req.body.month,
      year: req.body.year
  };
