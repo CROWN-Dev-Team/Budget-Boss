@@ -285,9 +285,9 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 		module.exports = classNames;
 	} else if (true) {
 		// register as 'classnames', consistent with npm package name
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {
 			return classNames;
-		}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+		}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	} else {
 		window.classNames = classNames;
@@ -32091,6 +32091,11 @@ var App = function (_React$Component) {
               _react2.default.createElement(
                 'th',
                 { className: 'button-col' },
+                'Actual'
+              ),
+              _react2.default.createElement(
+                'th',
+                { className: 'button-col' },
                 'Month'
               ),
               _react2.default.createElement(
@@ -33094,6 +33099,7 @@ var Add = function (_React$Component) {
     _this.state = {
       description: '',
       amount: '',
+      actual: '',
       month: '',
       year: '',
       messageFromServer: '',
@@ -33122,6 +33128,7 @@ var Add = function (_React$Component) {
         modalIsOpen: false,
         description: '',
         amount: '',
+        actual: '',
         month: 'Jan',
         year: 2016,
         messageFromServer: ''
@@ -33184,6 +33191,7 @@ var Add = function (_React$Component) {
       _axios2.default.post('/insert', querystring.stringify({
         desc: e.state.description,
         amount: e.state.amount,
+        actual: e.state.actual,
         month: e.state.month,
         year: e.state.year
       }), {
@@ -33207,6 +33215,11 @@ var Add = function (_React$Component) {
       if (e.target.name == "amount") {
         this.setState({
           amount: e.target.value
+        });
+      }
+      if (e.target.name == "actual") {
+        this.setState({
+          actual: e.target.value
         });
       }
     }
@@ -33254,6 +33267,12 @@ var Add = function (_React$Component) {
                 'Amount:'
               ),
               _react2.default.createElement('input', { type: 'number', id: 'amount', name: 'amount', value: this.state.amount, onChange: this.handleTextChange }),
+              _react2.default.createElement(
+                'label',
+                { 'for': 'actual' },
+                'Actual:'
+              ),
+              _react2.default.createElement('input', { type: 'number', id: 'actual', name: 'actual', value: this.state.actual, onChange: this.handleTextChange }),
               _react2.default.createElement(
                 'label',
                 { 'for': 'month' },
@@ -45695,9 +45714,9 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
 	};
 
 	if (true) {
-		!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+		!(__WEBPACK_AMD_DEFINE_RESULT__ = (function () {
 			return ExecutionEnvironment;
-		}.call(exports, __webpack_require__, exports, module),
+		}).call(exports, __webpack_require__, exports, module),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	} else if (typeof module !== 'undefined' && module.exports) {
 		module.exports = ExecutionEnvironment;
@@ -45943,6 +45962,7 @@ var Update = function (_React$Component) {
       id: '',
       description: '',
       amount: '',
+      actual: '',
       month: '',
       year: '',
       messageFromServer: '',
@@ -45964,6 +45984,7 @@ var Update = function (_React$Component) {
         id: this.props.expense._id,
         description: this.props.expense.description,
         amount: this.props.expense.amount,
+        actual: this.props.expense.actual,
         month: this.props.expense.month,
         year: this.props.expense.year
       });
@@ -46020,6 +46041,11 @@ var Update = function (_React$Component) {
           amount: e.target.value
         });
       }
+      if (e.target.name == "actual") {
+        this.setState({
+          actual: e.target.value
+        });
+      }
     }
   }, {
     key: 'onClick',
@@ -46033,6 +46059,7 @@ var Update = function (_React$Component) {
         _id: e.state.id,
         description: e.state.description,
         amount: e.state.amount,
+        actual: e.state.actual,
         month: e.state.month,
         year: e.state.year
       }), {
@@ -46089,6 +46116,12 @@ var Update = function (_React$Component) {
                 'Amount:'
               ),
               _react2.default.createElement('input', { type: 'number', id: 'amount', name: 'amount', value: this.state.amount, onChange: this.handleTextChange }),
+              _react2.default.createElement(
+                'label',
+                { 'for': 'actual' },
+                'Actual:'
+              ),
+              _react2.default.createElement('input', { type: 'number', id: 'actual', name: 'actual', value: this.state.actual, onChange: this.handleTextChange }),
               _react2.default.createElement(
                 'label',
                 { 'for': 'month' },
