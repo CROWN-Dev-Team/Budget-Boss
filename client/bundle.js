@@ -285,9 +285,9 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 		module.exports = classNames;
 	} else if (true) {
 		// register as 'classnames', consistent with npm package name
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
 			return classNames;
-		}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+		}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	} else {
 		window.classNames = classNames;
@@ -32096,6 +32096,11 @@ var App = function (_React$Component) {
               _react2.default.createElement(
                 'th',
                 { className: 'button-col' },
+                'Difference'
+              ),
+              _react2.default.createElement(
+                'th',
+                { className: 'button-col' },
                 'Month'
               ),
               _react2.default.createElement(
@@ -33129,6 +33134,7 @@ var Add = function (_React$Component) {
         description: '',
         amount: '',
         actual: '',
+        difference: '',
         month: 'Jan',
         year: 2016,
         messageFromServer: ''
@@ -33192,6 +33198,7 @@ var Add = function (_React$Component) {
         desc: e.state.description,
         amount: e.state.amount,
         actual: e.state.actual,
+        difference: e.state.difference,
         month: e.state.month,
         year: e.state.year
       }), {
@@ -33220,6 +33227,11 @@ var Add = function (_React$Component) {
       if (e.target.name == "actual") {
         this.setState({
           actual: e.target.value
+        });
+      }
+      if (e.target.name == "difference") {
+        this.setState({
+          difference: e.target.value
         });
       }
     }
@@ -33273,6 +33285,12 @@ var Add = function (_React$Component) {
                 'Actual:'
               ),
               _react2.default.createElement('input', { type: 'number', id: 'actual', name: 'actual', value: this.state.actual, onChange: this.handleTextChange }),
+              _react2.default.createElement(
+                'label',
+                { 'for': 'difference' },
+                'Difference:'
+              ),
+              _react2.default.createElement('input', { type: 'number', id: 'difference', name: 'difference', value: this.state.difference, onChange: this.handleTextChange }),
               _react2.default.createElement(
                 'label',
                 { 'for': 'month' },
@@ -45714,9 +45732,9 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
 	};
 
 	if (true) {
-		!(__WEBPACK_AMD_DEFINE_RESULT__ = (function () {
+		!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
 			return ExecutionEnvironment;
-		}).call(exports, __webpack_require__, exports, module),
+		}.call(exports, __webpack_require__, exports, module),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	} else if (typeof module !== 'undefined' && module.exports) {
 		module.exports = ExecutionEnvironment;
@@ -45963,6 +45981,7 @@ var Update = function (_React$Component) {
       description: '',
       amount: '',
       actual: '',
+      difference: '',
       month: '',
       year: '',
       messageFromServer: '',
@@ -45985,6 +46004,7 @@ var Update = function (_React$Component) {
         description: this.props.expense.description,
         amount: this.props.expense.amount,
         actual: this.props.expense.actual,
+        difference: this.props.expense.difference,
         month: this.props.expense.month,
         year: this.props.expense.year
       });
@@ -46046,6 +46066,11 @@ var Update = function (_React$Component) {
           actual: e.target.value
         });
       }
+      if (e.target.name == "difference") {
+        this.setState({
+          difference: e.target.value
+        });
+      }
     }
   }, {
     key: 'onClick',
@@ -46060,6 +46085,7 @@ var Update = function (_React$Component) {
         description: e.state.description,
         amount: e.state.amount,
         actual: e.state.actual,
+        difference: e.state.difference,
         month: e.state.month,
         year: e.state.year
       }), {
@@ -46122,6 +46148,12 @@ var Update = function (_React$Component) {
                 'Actual:'
               ),
               _react2.default.createElement('input', { type: 'number', id: 'actual', name: 'actual', value: this.state.actual, onChange: this.handleTextChange }),
+              _react2.default.createElement(
+                'label',
+                { 'for': 'difference' },
+                'Difference:'
+              ),
+              _react2.default.createElement('input', { type: 'number', id: 'difference', name: 'difference', value: this.state.difference, onChange: this.handleTextChange }),
               _react2.default.createElement(
                 'label',
                 { 'for': 'month' },
