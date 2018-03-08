@@ -12,6 +12,7 @@ this.state = {
         description: '',
         amount: '',
         actual: '',
+        difference: '',
         month: '',
         year: '',
         messageFromServer: '',
@@ -56,7 +57,7 @@ this.setState({
       });
     }
 componentWillReceiveProps(nextProps){
-      if(this.props.selectedMonth == 'All'){
+      if(this.props.selectedMonth === 'All'){
         this.setState({
           month: 'Jan'
         });
@@ -70,12 +71,12 @@ this.setState({
       })
     }
 handleSelectChange(e) {
-      if (e.target.name == 'month') {
+      if (e.target.name === 'month') {
         this.setState({
           month: e.target.value
         });
       }
-      if (e.target.name == 'year') {
+      if (e.target.name === 'year') {
         this.setState({
           year: e.target.value
         });
@@ -104,29 +105,29 @@ insertNewExpense(e) {
       });
     }
 handleTextChange(e) {
-      if (e.target.name == "description") {
+      if (e.target.name === "description") {
         this.setState({
           description: e.target.value
         });
       }
-if (e.target.name == "amount") {
+if (e.target.name === "amount") {
         this.setState({
           amount: e.target.value
         });
       }
-if (e.target.name == "actual") {
+if (e.target.name === "actual") {
         this.setState({
           actual: e.target.value
         });
       }
-if (e.target.name == "difference") {
+if (e.target.name === "difference") {
         this.setState({
           difference: e.target.value
         });
       }      
     }
 render() {
-   if(this.state.messageFromServer == ''){
+   if(this.state.messageFromServer === ''){
       return (
         <div>
       <Button bsStyle="success" bsSize="small" onClick={this.openModal}><span className="glyphicon glyphicon-plus"></span></Button>

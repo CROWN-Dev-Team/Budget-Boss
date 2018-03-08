@@ -57,34 +57,34 @@ closeModal() {
     });
   }
 handleSelectChange(e) {
-    if (e.target.name == "month") {
+    if (e.target.name === "month") {
       this.setState({
         month: e.target.value
       });
     }
-    if (e.target.name == "year") {
+    if (e.target.name === "year") {
       this.setState({
         year: e.target.value
       });
     }
   }
 handleTextChange(e) {
-    if (e.target.name == "description") {
+    if (e.target.name === "description") {
       this.setState({
         description: e.target.value
       });
     }
-if (e.target.name == "amount") {
+if (e.target.name === "amount") {
       this.setState({
         amount: e.target.value
       });
     }
-if (e.target.name == "actual") {
+if (e.target.name === "actual") {
       this.setState({
         actual: e.target.value
       });
     }
-if (e.target.name == "difference") {
+if (e.target.name === "difference") {
       this.setState({
         difference: e.target.value
       });
@@ -114,7 +114,7 @@ update(e) {
 });
   }
 render() {
-    if(this.state.messageFromServer == ''){
+    if(this.state.messageFromServer === ''){
       return (
         <div>
           <Button bsStyle="warning" bsSize="small" onClick={this.openModal}><span className="glyphicon glyphicon-edit"></span></Button>

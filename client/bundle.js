@@ -285,9 +285,9 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 		module.exports = classNames;
 	} else if (true) {
 		// register as 'classnames', consistent with npm package name
-		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {
 			return classNames;
-		}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+		}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	} else {
 		window.classNames = classNames;
@@ -33115,6 +33115,7 @@ var Add = function (_React$Component) {
       description: '',
       amount: '',
       actual: '',
+      difference: '',
       month: '',
       year: '',
       messageFromServer: '',
@@ -33169,7 +33170,7 @@ var Add = function (_React$Component) {
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
-      if (this.props.selectedMonth == 'All') {
+      if (this.props.selectedMonth === 'All') {
         this.setState({
           month: 'Jan'
         });
@@ -33185,12 +33186,12 @@ var Add = function (_React$Component) {
   }, {
     key: 'handleSelectChange',
     value: function handleSelectChange(e) {
-      if (e.target.name == 'month') {
+      if (e.target.name === 'month') {
         this.setState({
           month: e.target.value
         });
       }
-      if (e.target.name == 'year') {
+      if (e.target.name === 'year') {
         this.setState({
           year: e.target.value
         });
@@ -33224,22 +33225,22 @@ var Add = function (_React$Component) {
   }, {
     key: 'handleTextChange',
     value: function handleTextChange(e) {
-      if (e.target.name == "description") {
+      if (e.target.name === "description") {
         this.setState({
           description: e.target.value
         });
       }
-      if (e.target.name == "amount") {
+      if (e.target.name === "amount") {
         this.setState({
           amount: e.target.value
         });
       }
-      if (e.target.name == "actual") {
+      if (e.target.name === "actual") {
         this.setState({
           actual: e.target.value
         });
       }
-      if (e.target.name == "difference") {
+      if (e.target.name === "difference") {
         this.setState({
           difference: e.target.value
         });
@@ -33248,7 +33249,7 @@ var Add = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      if (this.state.messageFromServer == '') {
+      if (this.state.messageFromServer === '') {
         return _react2.default.createElement(
           'div',
           null,
@@ -45742,9 +45743,9 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
 	};
 
 	if (true) {
-		!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+		!(__WEBPACK_AMD_DEFINE_RESULT__ = (function () {
 			return ExecutionEnvironment;
-		}.call(exports, __webpack_require__, exports, module),
+		}).call(exports, __webpack_require__, exports, module),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	} else if (typeof module !== 'undefined' && module.exports) {
 		module.exports = ExecutionEnvironment;
@@ -46047,12 +46048,12 @@ var Update = function (_React$Component) {
   }, {
     key: 'handleSelectChange',
     value: function handleSelectChange(e) {
-      if (e.target.name == "month") {
+      if (e.target.name === "month") {
         this.setState({
           month: e.target.value
         });
       }
-      if (e.target.name == "year") {
+      if (e.target.name === "year") {
         this.setState({
           year: e.target.value
         });
@@ -46061,22 +46062,22 @@ var Update = function (_React$Component) {
   }, {
     key: 'handleTextChange',
     value: function handleTextChange(e) {
-      if (e.target.name == "description") {
+      if (e.target.name === "description") {
         this.setState({
           description: e.target.value
         });
       }
-      if (e.target.name == "amount") {
+      if (e.target.name === "amount") {
         this.setState({
           amount: e.target.value
         });
       }
-      if (e.target.name == "actual") {
+      if (e.target.name === "actual") {
         this.setState({
           actual: e.target.value
         });
       }
-      if (e.target.name == "difference") {
+      if (e.target.name === "difference") {
         this.setState({
           difference: e.target.value
         });
@@ -46111,7 +46112,7 @@ var Update = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      if (this.state.messageFromServer == '') {
+      if (this.state.messageFromServer === '') {
         return _react2.default.createElement(
           'div',
           null,
@@ -46571,7 +46572,7 @@ var MonthTabsRouter = function (_React$Component) {
   _createClass(MonthTabsRouter, [{
     key: 'render',
     value: function render() {
-      if (this.props.tabId == 'All') {
+      if (this.props.tabId === 'All') {
         return _react2.default.createElement(
           _reactRouterDom.Link,
           { to: { pathname: '/', search: '?month=All&year=' + this.props.year } },

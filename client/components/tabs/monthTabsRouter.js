@@ -8,7 +8,7 @@ class MonthTabsRouter extends React.Component {
   this.state={style:{'font-size': '10px'}}
  }
 render(){
-  if(this.props.tabId == 'All'){
+  if(this.props.tabId === 'All'){
    return <Link to={{pathname: '/', search: '?month=All&year='+this.props.year}} >
      <p style={this.state.style}>Show All</p>
     </Link>
