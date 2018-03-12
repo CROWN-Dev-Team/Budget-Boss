@@ -133,7 +133,7 @@ render() {
             <label for="difference">Difference:</label><input type="number" id="difference" name="difference" value={this.state.difference} onChange={this.handleTextChange}></input>
             <label for="month">Month:</label><select id="month" name="month" value={this.state.month} onChange={this.handleSelectChange}>
                       <option value="Jan" id="Jan">January</option>
-                      <option value="Feb" id="Feb">Febrary</option>
+                      <option value="Feb" id="Feb">February</option>
                       <option value="Mar" id="Mar">March</option>
                       <option value="Apr" id="Apr">April</option>
                       <option value="May" id="May">May</option>
