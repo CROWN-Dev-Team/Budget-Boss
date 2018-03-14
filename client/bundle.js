@@ -31911,19 +31911,25 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(25);
 
-var _app = __webpack_require__(207);
+var _App = __webpack_require__(207);
 
-var _app2 = _interopRequireDefault(_app);
+var _App2 = _interopRequireDefault(_App);
+
+var _Login = __webpack_require__(378);
+
+var _Login2 = _interopRequireDefault(_Login);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//client/routes.js
 var Routes = exports.Routes = function Routes() {
   return _react2.default.createElement(
     _reactRouterDom.Switch,
     null,
-    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _app2.default })
+    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _App2.default }),
+    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/Login', component: _Login2.default })
   );
-}; //client/routes.js
+};
 exports.default = Routes;
 
 /***/ }),
@@ -46181,7 +46187,7 @@ var Update = function (_React$Component) {
                 _react2.default.createElement(
                   'option',
                   { value: 'Feb', id: 'Feb' },
-                  'Febrary'
+                  'February'
                 ),
                 _react2.default.createElement(
                   'option',
@@ -46602,6 +46608,163 @@ var MonthTabsRouter = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = MonthTabsRouter;
+
+/***/ }),
+/* 378 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var login = function login(props) {
+  return _react2.default.createElement(
+    "div",
+    null,
+    _react2.default.createElement(
+      "div",
+      { "class": "center-align" },
+      _react2.default.createElement("img", { src: "budgetbosslogo1.png", "class": "responsive-img" }),
+      _react2.default.createElement(
+        "h1",
+        { "class": "align-center header" },
+        "Budget Boss"
+      ),
+      _react2.default.createElement(
+        "h5",
+        { "class": "align-center header" },
+        "A minimalist approach to managing your finances."
+      )
+    ),
+    _react2.default.createElement(
+      "div",
+      { "class": "container" },
+      _react2.default.createElement(
+        "div",
+        { "class": "center-align" },
+        _react2.default.createElement(
+          "div",
+          { "class": "card login hoverable" },
+          _react2.default.createElement(
+            "div",
+            { "class": "card-action" },
+            _react2.default.createElement(
+              "a",
+              { href: "#", "class": "active green-text" },
+              "Login"
+            ),
+            _react2.default.createElement(
+              "a",
+              { href: "#", "class": "grey-text" },
+              "Register"
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { "class": "card-content" },
+            _react2.default.createElement(
+              "form",
+              { method: "post", "class": "col s12" },
+              _react2.default.createElement(
+                "div",
+                { "class": "row" },
+                _react2.default.createElement(
+                  "div",
+                  { "class": "input-field col s12" },
+                  _react2.default.createElement("input", {
+                    type: "email",
+                    name: "email",
+                    id: "email",
+                    "class": "validate"
+                  }),
+                  _react2.default.createElement(
+                    "label",
+                    { "for": "email" },
+                    "Enter your email"
+                  )
+                ),
+                _react2.default.createElement(
+                  "div",
+                  { "class": "input-field col s12" },
+                  _react2.default.createElement("input", {
+                    type: "password",
+                    name: "password",
+                    id: "password",
+                    "class": "validate"
+                  }),
+                  _react2.default.createElement(
+                    "label",
+                    { "for": "password" },
+                    "Enter your password"
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                { "class": "row" },
+                _react2.default.createElement(
+                  "div",
+                  { "class": "right-align" },
+                  _react2.default.createElement(
+                    "label",
+                    null,
+                    _react2.default.createElement(
+                      "a",
+                      { href: "/user/forgot-password", "class": "pink-text" },
+                      _react2.default.createElement(
+                        "b",
+                        null,
+                        "Forgot Password?"
+                      )
+                    )
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                { "class": "row" },
+                _react2.default.createElement(
+                  "div",
+                  { "class": "left-align" },
+                  _react2.default.createElement("input", { type: "checkbox", id: "test5" }),
+                  _react2.default.createElement(
+                    "label",
+                    { "for": "test5" },
+                    "Remember Me"
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                { "class": "row center-align" },
+                _react2.default.createElement(
+                  "button",
+                  {
+                    type: "submit",
+                    name: "btn_login",
+                    "class": "col s12 btn btn-large waves-effect green"
+                  },
+                  "Login"
+                )
+              )
+            )
+          )
+        )
+      )
+    )
+  );
+};
+
+exports.default = login;
 
 /***/ })
 /******/ ]);
