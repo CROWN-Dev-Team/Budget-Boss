@@ -17,6 +17,10 @@
     "react-modal": "^3.1.2",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
+    "sequelize": "^4.36.1",
+    "passport": "^0.4.0",
+    "exphbs": "^1.2.0",
+    "path": "^0.12.7",
     "webpack": "^3.4.1"
   },
   "scripts": {
