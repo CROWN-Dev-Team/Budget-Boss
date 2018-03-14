@@ -46181,7 +46181,7 @@ var Update = function (_React$Component) {
                 _react2.default.createElement(
                   'option',
                   { value: 'Feb', id: 'Feb' },
-                  'Febrary'
+                  'February'
                 ),
                 _react2.default.createElement(
                   'option',
