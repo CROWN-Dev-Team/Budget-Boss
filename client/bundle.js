@@ -31927,6 +31927,7 @@ var Routes = exports.Routes = function Routes() {
     _reactRouterDom.Switch,
     null,
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _App2.default }),
+    ',',
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/Login', component: _Login2.default })
   );
 };
