@@ -46639,16 +46639,16 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var App = function (_Component) {
-  _inherits(App, _Component);
+var App1 = function (_Component) {
+  _inherits(App1, _Component);
 
-  function App() {
-    _classCallCheck(this, App);
+  function App1() {
+    _classCallCheck(this, App1);
 
-    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (App1.__proto__ || Object.getPrototypeOf(App1)).apply(this, arguments));
   }
 
-  _createClass(App, [{
+  _createClass(App1, [{
     key: 'goTo',
     value: function goTo(route) {
       this.props.history.replace('/' + route);
@@ -46662,6 +46662,11 @@ var App = function (_Component) {
     key: 'logout',
     value: function logout() {
       this.props.auth.logout();
+    }
+  }, {
+    key: 'renewToken',
+    value: function renewToken() {
+      this.props.auth.renewToken();
     }
   }, {
     key: 'render',
@@ -46683,7 +46688,7 @@ var App = function (_Component) {
               null,
               _react2.default.createElement(
                 'a',
-                { href: '#' },
+                { onClick: this.goTo.bind(this, 'home') },
                 'Auth0 - React'
               )
             ),
@@ -46699,7 +46704,6 @@ var App = function (_Component) {
             !isAuthenticated() && _react2.default.createElement(
               _reactBootstrap.Button,
               {
-                id: 'qsLoginBtn',
                 bsStyle: 'primary',
                 className: 'btn-margin',
                 onClick: this.login.bind(this)
@@ -46709,7 +46713,24 @@ var App = function (_Component) {
             isAuthenticated() && _react2.default.createElement(
               _reactBootstrap.Button,
               {
-                id: 'qsLogoutBtn',
+                bsStyle: 'primary',
+                className: 'btn-margin',
+                onClick: this.goTo.bind(this, 'profile')
+              },
+              'Profile'
+            ),
+            isAuthenticated() && _react2.default.createElement(
+              _reactBootstrap.Button,
+              {
+                bsStyle: 'primary',
+                className: 'btn-margin',
+                onClick: this.renewToken.bind(this)
+              },
+              'Renew Token'
+            ),
+            isAuthenticated() && _react2.default.createElement(
+              _reactBootstrap.Button,
+              {
                 bsStyle: 'primary',
                 className: 'btn-margin',
                 onClick: this.logout.bind(this)
@@ -46722,10 +46743,10 @@ var App = function (_Component) {
     }
   }]);
 
-  return App;
+  return App1;
 }(_react.Component);
 
-exports.default = App;
+exports.default = App1;
 
 /***/ }),
 /* 379 */
