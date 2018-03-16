@@ -1,4 +1,9 @@
 /*client/css/App.css*/
+
+h1 {
+    text-align: center;
+    color: green
+}
 .button-col {
     width:100px;
     text-align:center;

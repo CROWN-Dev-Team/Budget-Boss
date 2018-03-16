@@ -2,11 +2,11 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import App from './components/App';
-import Login from './components/Login';
+import App1 from '../src/App1';
 export const Routes = () => (
     <Switch>
-      <Route exact path='/' component={App} />,
-      <Route exact path='/Login' component={Login} />
+      <Route exact path='/App' component={App} />,
+      <Route exact path='/' component={App1} />
     </Switch>
 );
 export default Routes;
