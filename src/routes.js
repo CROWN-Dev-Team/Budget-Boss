@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect, Route, Router } from 'react-router-dom';
-import App from './App';
-import Home from './Home/Home';
+import App1 from './App1';
+import Home  from './Home/Home';
 import Profile from './Profile/Profile';
 import Callback from './Callback/Callback';
 import Auth from './Auth/Auth';

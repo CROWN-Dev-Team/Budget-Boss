@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Navbar, Button } from 'react-bootstrap';
 import './App.css';
 
-class App extends Component {
+class App1 extends Component {
   goTo(route) {
     this.props.history.replace(`/${route}`);
   }
@@ -75,4 +75,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App1;
