@@ -28,11 +28,11 @@
   "scripts": {
     "webpack": "webpack",
     "start": "npm run webpack && nodemon --exec babel-node -- server/server.js",
-    // "start": "npm run client:start",
-    // "client:start": "react-scripts start",
-    // "build": "react-scripts build",
-    // "test": "react-scripts test --env=jsdom",
-    // "eject": "react-scripts eject"
+    "start": "npm run client:start",
+    "client:start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "author": "",
   "license": "ISC"
