@@ -31915,9 +31915,9 @@ var _App = __webpack_require__(207);
 
 var _App2 = _interopRequireDefault(_App);
 
-var _Login = __webpack_require__(378);
+var _App3 = __webpack_require__(378);
 
-var _Login2 = _interopRequireDefault(_Login);
+var _App4 = _interopRequireDefault(_App3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31926,9 +31926,9 @@ var Routes = exports.Routes = function Routes() {
   return _react2.default.createElement(
     _reactRouterDom.Switch,
     null,
-    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _App2.default }),
+    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/App', component: _App2.default }),
     ',',
-    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/Login', component: _Login2.default })
+    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _App4.default })
   );
 };
 exports.default = Routes;
@@ -46633,190 +46633,99 @@ __webpack_require__(379);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Login = function (_Component) {
-  _inherits(Login, _Component);
+var App = function (_Component) {
+  _inherits(App, _Component);
 
-  function Login(props) {
-    _classCallCheck(this, Login);
+  function App() {
+    _classCallCheck(this, App);
 
-    var _this = _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this, props));
-
-    _this.state = {
-      email: "",
-      password: ""
-    };
-    return _this;
+    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
   }
 
-  _createClass(Login, [{
-    key: "validateForm",
-    value: function validateForm() {
-      return this.state.email.length > 0 && this.state.password.length > 0;
+  _createClass(App, [{
+    key: 'goTo',
+    value: function goTo(route) {
+      this.props.history.replace('/' + route);
     }
   }, {
-    key: "handleChange",
-    value: function handleChange(event) {
-      this.setState(_defineProperty({}, event.target.id, event.target.value));
+    key: 'login',
+    value: function login() {
+      this.props.auth.login();
     }
   }, {
-    key: "handleSubmit",
-    value: function handleSubmit(event) {
-      event.preventDefault();
+    key: 'logout',
+    value: function logout() {
+      this.props.auth.logout();
     }
   }, {
-    key: "render",
+    key: 'render',
     value: function render() {
+      var isAuthenticated = this.props.auth.isAuthenticated;
+
+
       return _react2.default.createElement(
-        "div",
-        { className: "Login" },
+        'div',
+        null,
         _react2.default.createElement(
-          "form",
-          { onSubmit: this.handleSubmit },
+          _reactBootstrap.Navbar,
+          { fluid: true },
           _react2.default.createElement(
-            _reactBootstrap.FormGroup,
-            { controlId: "email", bsSize: "large" },
+            _reactBootstrap.Navbar.Header,
+            null,
             _react2.default.createElement(
-              _reactBootstrap.ControlLabel,
+              _reactBootstrap.Navbar.Brand,
               null,
-              "Email"
+              _react2.default.createElement(
+                'a',
+                { href: '#' },
+                'Auth0 - React'
+              )
             ),
-            _react2.default.createElement(_reactBootstrap.FormControl, {
-              autoFocus: true,
-              type: "email",
-              value: this.state.email,
-              onChange: this.handleChange
-            })
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.FormGroup,
-            { controlId: "password", bsSize: "large" },
             _react2.default.createElement(
-              _reactBootstrap.ControlLabel,
-              null,
-              "Password"
+              _reactBootstrap.Button,
+              {
+                bsStyle: 'primary',
+                className: 'btn-margin',
+                onClick: this.goTo.bind(this, 'home')
+              },
+              'Home'
             ),
-            _react2.default.createElement(_reactBootstrap.FormControl, {
-              value: this.state.password,
-              onChange: this.handleChange,
-              type: "password"
-            })
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Button,
-            {
-              block: true,
-              bsSize: "large",
-              disabled: !this.validateForm(),
-              type: "submit"
-            },
-            "Login"
+            !isAuthenticated() && _react2.default.createElement(
+              _reactBootstrap.Button,
+              {
+                id: 'qsLoginBtn',
+                bsStyle: 'primary',
+                className: 'btn-margin',
+                onClick: this.login.bind(this)
+              },
+              'Log In'
+            ),
+            isAuthenticated() && _react2.default.createElement(
+              _reactBootstrap.Button,
+              {
+                id: 'qsLogoutBtn',
+                bsStyle: 'primary',
+                className: 'btn-margin',
+                onClick: this.logout.bind(this)
+              },
+              'Log Out'
+            )
           )
         )
       );
     }
   }]);
 
-  return Login;
+  return App;
 }(_react.Component);
 
-exports.default = Login;
-;
-
-// ---------------------------------------------------------------------------------------------
-
-// import React, { Component } from "react";
-// // var materialize = require('materialize-css');
-// // import "../css/Login.css"
-
-// const login = props => {
-//   return (
-//     <div>
-//       <div class="center-align">
-//         <img src="budgetbosslogo1.png" class="responsive-img" />
-//         <h1 class="align-center header">Budget Boss</h1>
-//         <h5 class="align-center header">
-//           A minimalist approach to managing your finances.
-//         </h5>
-//       </div>
-
-//       <div class="container">
-//         <div class="center-align">
-//           <div class="card login hoverable">
-//             <div class="card-action">
-//               <a href="#" class="active green-text">
-//                 Login
-//               </a>
-//               <a href="#" class="grey-text">
-//                 Register
-//               </a>
-//             </div>
-
-//             <div class="card-content">
-//               <form method="post" class="col s12">
-//                 <div class="row">
-//                   <div class="input-field col s12">
-//                     <input
-//                       type="email"
-//                       name="email"
-//                       id="email"
-//                       class="validate"
-//                     />
-//                     <label for="email">Enter your email</label>
-//                   </div>
-
-//                   <div class="input-field col s12">
-//                     <input
-//                       type="password"
-//                       name="password"
-//                       id="password"
-//                       class="validate"
-//                     />
-//                     <label for="password">Enter your password</label>
-//                   </div>
-//                 </div>
-//                 <div class="row">
-//                   <div class="right-align">
-//                     <label>
-//                       <a href="/user/forgot-password" class="pink-text">
-//                         <b>Forgot Password?</b>
-//                       </a>
-//                     </label>
-//                   </div>
-//                 </div>
-
-//                 <div class="row">
-//                   <div class="left-align">
-//                     <input type="checkbox" id="test5" />
-//                     <label for="test5">Remember Me</label>
-//                   </div>
-//                 </div>
-//                 <div class="row center-align">
-//                   <button
-//                     type="submit"
-//                     name="btn_login"
-//                     class="col s12 btn btn-large waves-effect green"
-//                   >
-//                     Login
-//                   </button>
-//                 </div>
-//               </form>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default login;
+exports.default = App;
 
 /***/ }),
 /* 379 */
@@ -46839,8 +46748,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./Login.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./Login.css");
+		module.hot.accept("!!../node_modules/css-loader/index.js!./App.css", function() {
+			var newContent = require("!!../node_modules/css-loader/index.js!./App.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -46858,7 +46767,7 @@ exports = module.exports = __webpack_require__(381)(undefined);
 
 
 // module
-exports.push([module.i, "@media all and (min-width: 480px) {\n  .Login {\n    padding: 60px 0;\n  }\n\n  .Login form {\n    margin: 0 auto;\n    max-width: 320px;\n  }\n}", ""]);
+exports.push([module.i, ".btn-margin {\n  margin: 7px 3px;\n}\n", ""]);
 
 // exports
 
