@@ -1,7 +1,6 @@
 import React from 'react';
 import { Redirect, Route, Router } from 'react-router-dom';
 import App1 from './App1';
-import App from '../client/components/App';
 import Home  from './Home/Home';
 import Profile from './Profile/Profile';
 import Callback from './Callback/Callback';
