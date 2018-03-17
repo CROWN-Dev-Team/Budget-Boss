@@ -23,7 +23,7 @@ class App1 extends Component {
         <Navbar fluid>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#">Auth0 - React</a>
+              <a href="/">Budget Boss</a>
             </Navbar.Brand>
             <Button
               bsStyle="primary"

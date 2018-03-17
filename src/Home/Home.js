@@ -13,7 +13,7 @@ class Home extends Component {
           isAuthenticated() && (
               <h4>
                 You are logged in! You can now view your{' '}
-                <Link to="profile">profile area</Link>
+                <Link to="profile">Budget Boss</Link>
                 .
               </h4>
             )

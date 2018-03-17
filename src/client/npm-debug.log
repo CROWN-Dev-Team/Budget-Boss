@@ -1,7 +1,5 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
-1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
-1 verbose cli   'start' ]
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'start' ]
 2 info using npm@3.10.10
 3 info using node@v6.11.2
 4 verbose run-script [ 'prestart', 'start', 'poststart' ]
@@ -9,26 +7,26 @@
 6 silly lifecycle budget-boss@1.0.0~prestart: no script for prestart, continuing
 7 info lifecycle budget-boss@1.0.0~start: budget-boss@1.0.0
 8 verbose lifecycle budget-boss@1.0.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle budget-boss@1.0.0~start: PATH: C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;C:\Users\blake\homework\Final_Project\Budget-Boss\node_modules\.bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\blake\bin;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files\MongoDB\Server\3.6\bin;C:\Program Files\dotnet;C:\Program Files\Microsoft SQL Server\130\Tools\Binn;C:\Users\blake\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Heroku\bin;C:\Users\blake\AppData\Roaming\npm;C:\Users\blake\AppData\Local\GitHubDesktop\bin;C:\Users\blake\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin
-10 verbose lifecycle budget-boss@1.0.0~start: CWD: C:\Users\blake\homework\Final_Project\Budget-Boss
-11 silly lifecycle budget-boss@1.0.0~start: Args: [ '/d /s /c',
+9 verbose lifecycle budget-boss@1.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/harka/Desktop/UNC/BBtest/src/client/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Xamarin Workbooks.app/Contents/SharedSupport/path-bin
+10 verbose lifecycle budget-boss@1.0.0~start: CWD: /Users/harka/Desktop/UNC/BBtest/src/client
+11 silly lifecycle budget-boss@1.0.0~start: Args: [ '-c',
 11 silly lifecycle   'npm run webpack && nodemon --exec babel-node -- server/server.js' ]
 12 silly lifecycle budget-boss@1.0.0~start: Returned: code: 1  signal: null
 13 info lifecycle budget-boss@1.0.0~start: Failed to exec start script
 14 verbose stack Error: budget-boss@1.0.0 start: `npm run webpack && nodemon --exec babel-node -- server/server.js`
 14 verbose stack Exit status 1
-14 verbose stack     at EventEmitter.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\lifecycle.js:255:16)
+14 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:255:16)
 14 verbose stack     at emitTwo (events.js:106:13)
 14 verbose stack     at EventEmitter.emit (events.js:191:7)
-14 verbose stack     at ChildProcess.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\spawn.js:40:14)
+14 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:40:14)
 14 verbose stack     at emitTwo (events.js:106:13)
 14 verbose stack     at ChildProcess.emit (events.js:191:7)
 14 verbose stack     at maybeClose (internal/child_process.js:891:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
 15 verbose pkgid budget-boss@1.0.0
-16 verbose cwd C:\Users\blake\homework\Final_Project\Budget-Boss\client
-17 error Windows_NT 10.0.16299
-18 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "start"
+16 verbose cwd /Users/harka/Desktop/UNC/BBtest/src/client
+17 error Darwin 17.4.0
+18 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "start"
 19 error node v6.11.2
 20 error npm  v3.10.10
 21 error code ELIFECYCLE
