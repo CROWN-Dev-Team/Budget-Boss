@@ -8,6 +8,7 @@ import Delete from './Delete';
 import { Tab, Tabs } from 'react-bootstrap';
 import YearTabsRouter from './tabs/yearTabsRouter';
 import MonthTabs from './tabs/monthTabs';
+import '../css/App.css';
 export default class App extends React.Component {
 constructor() {
     super();
