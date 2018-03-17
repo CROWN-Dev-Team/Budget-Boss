@@ -3,16 +3,16 @@ import { AUTH_CONFIG } from './auth0-variables';
 import history from '../history';
 
 export default class Auth {
-  userProfile;
-  tokenRenewalTimeout;
-
   auth0 = new auth0.WebAuth({
     domain: AUTH_CONFIG.domain,
     clientID: AUTH_CONFIG.clientId,
     redirectUri: AUTH_CONFIG.callbackUrl,
+    audience: `https://${AUTH_CONFIG.domain}/userinfo`,
     responseType: 'token id_token',
     scope: 'openid profile'
   });
+
+  userProfile;
 
   constructor() {
     this.login = this.login.bind(this);
@@ -21,7 +21,6 @@ export default class Auth {
     this.isAuthenticated = this.isAuthenticated.bind(this);
     this.getAccessToken = this.getAccessToken.bind(this);
     this.getProfile = this.getProfile.bind(this);
-    this.scheduleRenewal();
   }
 
   login() {
@@ -46,14 +45,9 @@ export default class Auth {
     let expiresAt = JSON.stringify(
       authResult.expiresIn * 1000 + new Date().getTime()
     );
-
     localStorage.setItem('access_token', authResult.accessToken);
     localStorage.setItem('id_token', authResult.idToken);
     localStorage.setItem('expires_at', expiresAt);
-
-    // schedule a token renewal
-    this.scheduleRenewal();
-
     // navigate to the home route
     history.replace('/home');
   }
@@ -81,42 +75,15 @@ export default class Auth {
     localStorage.removeItem('access_token');
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
-    localStorage.removeItem('scopes');
     this.userProfile = null;
-    clearTimeout(this.tokenRenewalTimeout);
     // navigate to the home route
     history.replace('/home');
   }
 
   isAuthenticated() {
-    // Check whether the current time is past the
+    // Check whether the current time is past the 
     // access token's expiry time
     let expiresAt = JSON.parse(localStorage.getItem('expires_at'));
     return new Date().getTime() < expiresAt;
-  }
-
-  renewToken() {
-    this.auth0.checkSession({},
-      (err, result) => {
-        if (err) {
-          alert(
-            `Could not get a new token (${err.error}: ${err.error_description}).`
-          );
-        } else {
-          this.setSession(result);
-          alert(`Successfully renewed auth!`);
-        }
-      }
-    );
-  }
-
-  scheduleRenewal() {
-    const expiresAt = JSON.parse(localStorage.getItem('expires_at'));
-    const delay = expiresAt - Date.now();
-    if (delay > 0) {
-      this.tokenRenewalTimeout = setTimeout(() => {
-        this.renewToken();
-      }, delay);
-    }
   }
 }

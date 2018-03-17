@@ -18,7 +18,7 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "react": "^16.1.1",
-    "react-bootstrap": "^0.31.12",
+    "react-bootstrap": "^0.31.0",
     "react-dom": "^16.1.1",
     "react-modal": "^3.1.2",
     "react-router-dom": "^4.2.2",
@@ -27,7 +27,6 @@
   },
   "scripts": {
     "webpack": "webpack",
-    "start": "npm run webpack && nodemon --exec babel-node -- server/server.js",
     "start": "npm run client:start",
     "client:start": "react-scripts start",
     "build": "react-scripts build",

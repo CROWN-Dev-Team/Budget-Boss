@@ -4,7 +4,7 @@ import './App.css';
 
 class App1 extends Component {
   goTo(route) {
-    this.props.history.replace(`/${route}`);
+    this.props.history.replace(`/${route}`)
   }
 
   login() {
@@ -15,10 +15,6 @@ class App1 extends Component {
     this.props.auth.logout();
   }
 
-  renewToken() {
-    this.props.auth.renewToken();
-  }
-
   render() {
     const { isAuthenticated } = this.props.auth;
 
@@ -27,7 +23,7 @@ class App1 extends Component {
         <Navbar fluid>
           <Navbar.Header>
             <Navbar.Brand>
-              <a onClick={this.goTo.bind(this, 'home')}>Auth0 - React</a>
+              <a href="#">Auth0 - React</a>
             </Navbar.Brand>
             <Button
               bsStyle="primary"
@@ -36,40 +32,44 @@ class App1 extends Component {
             >
               Home
             </Button>
-            {!isAuthenticated() &&
-              <Button
-                bsStyle="primary"
-                className="btn-margin"
-                onClick={this.login.bind(this)}
-              >
-                Log In
-              </Button>}
-            {isAuthenticated() &&
-              <Button
-                bsStyle="primary"
-                className="btn-margin"
-                onClick={this.goTo.bind(this, 'profile')}
-              >
-                Profile
-              </Button>}
-            {isAuthenticated() &&
-              <Button
-                bsStyle="primary"
-                className="btn-margin"
-                onClick={this.renewToken.bind(this)}
-              >
-                Renew Token
-              </Button>}
-            {isAuthenticated() &&
-              <Button
-                bsStyle="primary"
-                className="btn-margin"
-                onClick={this.logout.bind(this)}
-              >
-                Log Out
-              </Button>}
+            {
+              !isAuthenticated() && (
+                  <Button
+                    bsStyle="primary"
+                    className="btn-margin"
+                    onClick={this.login.bind(this)}
+                  >
+                    Log In
+                  </Button>
+                )
+            }
+            {
+              isAuthenticated() && (
+                  <Button
+                    bsStyle="primary"
+                    className="btn-margin"
+                    onClick={this.goTo.bind(this, 'profile')}
+                  >
+                    Profile
+                  </Button>
+                )
+            }
+            {
+              isAuthenticated() && (
+                  <Button
+                    bsStyle="primary"
+                    className="btn-margin"
+                    onClick={this.logout.bind(this)}
+                  >
+                    Log Out
+                  </Button>
+                )
+            }
           </Navbar.Header>
         </Navbar>
+        <div className="container">
+          {this.props.children}
+        </div>
       </div>
     );
   }
