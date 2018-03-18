@@ -5,7 +5,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var app = express();
 var mongoose = require('mongoose');
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3001;
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../client'));
