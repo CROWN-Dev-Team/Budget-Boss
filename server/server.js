@@ -1,11 +1,11 @@
 //server/server.js
 var express = require('express');
-var router = require('./routes/routes');
+var router = require('./routes/routes.js')
 var path = require('path');
 var bodyParser = require('body-parser');
 var app = express();
 var mongoose = require('mongoose');
-var PORT = process.env.PORT || 3001;
+var PORT = process.env.PORT || 8000;
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../client'));
