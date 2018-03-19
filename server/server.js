@@ -5,7 +5,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var app = express();
 var mongoose = require('mongoose');
-var PORT = process.env.PORT || 8000;
+var PORT = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../client'));
@@ -19,7 +19,7 @@ app.use('/', router);
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/blooming-mesa-44461";
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI, {
-    useMongoClient: true
+    // useMongoClient: true
 });
 
 app.listen(PORT, function() {
